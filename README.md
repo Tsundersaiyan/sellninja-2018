@@ -1,2 +1,3 @@
 # sellninja-2018
-The main Sell Ninja WordPress theme.
+
+The Sell Ninja WordPress Theme

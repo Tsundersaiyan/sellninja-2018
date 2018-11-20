@@ -1,0 +1,81 @@
+/*
+ * Typography Component
+ */
+
+/*------------------------------------*\
+    #TYPOGRAPHY
+\*------------------------------------*/
+
+/*-- Typography > Base --*/
+
+body {
+    font-family: $font-family-body;
+    font-weight: normal;
+    line-height: 1.618;
+}
+
+/*-- Typography > Headings --*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: $font-family-heading;
+    font-weight: 700;
+}
+
+/*-- Typography > Bootstrap Changes --*/
+
+.lead {
+    font-size: 1.45rem;
+}
+
+/*-- Typography > Special Styles > Fonts --*/
+
+.text-font-body {
+    font-family: $font-family-body;
+}
+
+.text-font-heading {
+    font-family: $font-family-heading;
+}
+
+.text-font-heading-alt {
+    font-family: $font-family-heading-alt;
+}
+
+/*-- Typography > Special Styles > Coloring --*/
+
+.text-color-primary {
+    color: $color-text-primary;
+}
+
+.text-color-secondary {
+    color: $color-text-secondary;
+}
+
+.text-color-accent-yellow {
+    color: $color-text-accent-yellow;
+}
+
+.text-color-dark {
+    color: $color-text-dark;
+}
+
+.text-color-light {
+    color: $color-text-light;
+}
+
+/*-- Typography > Special Styles > Sizing --*/
+
+.text-small {
+    font-size: 85%;
+}

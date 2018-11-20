@@ -1,0 +1,160 @@
+/*
+ * Base Stylesheet
+ */
+
+/*------------------------------------*\
+    #VARIABLES
+\*------------------------------------*/
+
+/*-- Variables > Colors --*/
+
+// Primary Color
+$color-primary: #000000;
+$color-primary-lighter: lighten($color-primary, 10%);
+$color-primary-darker: darken($color-primary, 10%);
+
+// Secondary Color
+$color-secondary: #2E9DFF;
+$color-secondary-lighter: lighten($color-secondary, 10%);
+$color-secondary-darker: darken($color-secondary, 10%);
+
+// Light & Dark Colors
+$color-light: #FDFDFD;
+$color-dark: $color-secondary;
+
+// Misc. Colors (Grays, etc.)
+$color-gray: lighten($color-secondary, 10%);
+$color-gray-lighter: lighten($color-gray, 10%);
+$color-gray-darker: darken($color-gray, 10%);
+
+// Text Colors
+$color-text-primary: $color-primary;
+$color-text-primary-lighter: lighten($color-text-primary, 10%);
+$color-text-primary-darker: darken($color-text-primary, 10%);
+
+$color-text-secondary: $color-secondary;
+$color-text-secondary-lighter: lighten($color-text-secondary, 10%);
+$color-text-secondary-darker: darken($color-text-secondary, 10%);
+
+$color-text-accent-yellow: $color-accent-yellow;
+
+$color-text-dark: $color-dark;
+$color-text-dark-lighter: lighten($color-text-dark, 10%);
+$color-text-dark-darker: darken($color-text-dark, 10%);
+
+$color-text-light: $color-light;
+
+/*-- Variables > Font Families --*/
+
+// Base Font Setup For Sans-Serif Fallbacks
+$font-family-sans-serif: -apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+Arial,
+sans-serif;
+
+// Font Family Base
+$font-family-base: $font-family-sans-serif;
+
+// Font Family, Body
+$font-family-body: 'Open Sans',
+$font-family-base;
+
+// Font Family, Headings
+$font-family-heading: 'Galano Grotesque',
+'Roboto Slab',
+$font-family-body;
+
+$font-family-heading-alt: 'Roboto Slab',
+$font-family-body;
+
+/*-- Variables > Breakpoint Sizes --*/
+
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+
+/*------------------------------------*\
+    #MIXINS
+\*------------------------------------*/
+
+/*-- Mixins > Breakpoints --*/
+
+@mixin bp-sm {
+    @media only screen and (min-width: $bp-sm) {
+        @content;
+    }
+}
+
+@mixin bp-md {
+    @media only screen and (min-width: $bp-md) {
+        @content;
+    }
+}
+
+@mixin bp-lg {
+    @media only screen and (min-width: $bp-lg) {
+        @content;
+    }
+}
+
+@mixin bp-xl {
+    @media only screen and (min-width: $bp-xl) {
+        @content;
+    }
+}
+
+/*-- Mixins > Transitions --*/
+
+@mixin transition($props: all, $duration: .2s, $method: ease-in-out) {
+    $prefixes: -webkit- -moz- -ms- -o-;
+
+    @each $prefix in $prefixes {
+        $value: ();
+
+        @each $prop in $props {
+            @if length($value)>0 {
+                $value: append($value, unquote(",") #{$prop} $duration $method);
+            }
+
+            @else {
+                $value: append($value, #{$prop} $duration $method);
+            }
+        }
+
+        #{$prefix}transition: $value;
+    }
+}
+
+/*------------------------------------*\
+    #BASE-STYLES
+\*------------------------------------*/
+
+/*-- Base Styles > Base --*/
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    background-color: $color-light;
+    color: $color-text-dark;
+    min-height: 100%;
+}
+
+/*------------------------------------*\
+    #LINKS
+\*------------------------------------*/
+
+a {
+    color: $color-text-primary;
+    text-decoration: none;
+    @include transition(color);
+
+    &:hover,
+    &:focus {
+        color: $color-text-primary-lighter;
+        text-decoration: none;
+    }
+}
