@@ -22,7 +22,7 @@
     },
     "directories": {
         "archive": "archive",
-        "build": "build",
+        "build": "docs",
         "dist": "dist",
         "docs": "docs",
         "src": "src"
@@ -100,7 +100,9 @@
         "docs/*"
     ],
     "dependencies": {
+        "aos": "^2.3.4",
         "bootstrap": "^4.1.3",
+        "gulp-strip-comments": "^2.5.2",
         "jquery": "^3.3.1",
         "popper.js": "^1.14.5"
     }

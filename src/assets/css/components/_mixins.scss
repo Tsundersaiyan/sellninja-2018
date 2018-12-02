@@ -1,0 +1,66 @@
+/*------------------------------------*\
+    #MIXINS
+\*------------------------------------*/
+
+// Breakpoints
+@mixin bp-sm {
+    @media only screen and (min-width: $bp-sm) {
+        @content;
+    }
+}
+
+@mixin bp-md {
+    @media only screen and (min-width: $bp-md) {
+        @content;
+    }
+}
+
+@mixin bp-lg {
+    @media only screen and (min-width: $bp-lg) {
+        @content;
+    }
+}
+
+@mixin bp-xl {
+    @media only screen and (min-width: $bp-xl) {
+        @content;
+    }
+}
+
+// Transitions
+@mixin transition($props: all, $duration: .2s, $method: ease-in-out) {
+    $prefixes: -webkit- -moz- -ms- -o-;
+
+    @each $prefix in $prefixes {
+        $value: ();
+
+        @each $prop in $props {
+            @if length($value)>0 {
+                $value: append($value, unquote(",") #{$prop} $duration $method);
+            }
+
+            @else {
+                $value: append($value, #{$prop} $duration $method);
+            }
+        }
+
+        #{$prefix}transition: $value;
+    }
+}
+
+// Z-Index Functions
+@function z-index($key) {
+    @return map-get($z-index, $key);
+}
+
+@mixin z-index($key: 0) {
+    @if $key>=0 {
+        z-index: z-index($key);
+    }
+
+    @else {
+        $key: $key * -1;
+
+        z-index: -#{z-index($key)};
+    }
+}

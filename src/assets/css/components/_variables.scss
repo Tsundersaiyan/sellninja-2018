@@ -1,0 +1,79 @@
+/*------------------------------------*\
+    #VARIABLES
+\*------------------------------------*/
+
+/*-- Explicit Variables --*/
+
+// Colors
+$color-primary: #6248AA;
+$color-secondary: #1A1A1A;
+
+$color-accent-green: #0FAC94;
+
+$color-light: #FDFDFD;
+$color-dark: $color-secondary;
+$color-gray: #F0F0F0;
+
+// Fonts
+$font-family-base: -apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+Arial,
+sans-serif;
+
+$font-family-body: 'Open Sans',
+$font-family-base;
+
+$font-family-heading: 'Galano Grotesque',
+$font-family-body;
+
+/*-- Implicit Variables -- No need to edit. --*/
+
+// Colors
+$color-primary-lighter: lighten($color-primary, 10%);
+$color-primary-darker: darken($color-primary, 10%);
+
+$color-secondary-lighter: lighten($color-secondary, 10%);
+$color-secondary-darker: darken($color-secondary, 10%);
+
+$color-gray-lighter: lighten($color-gray, 10%);
+$color-gray-darker: darken($color-gray, 10%);
+
+// Text Colors
+$text-primary: $color-primary;
+$text-primary-lighter: $color-primary-lighter;
+$text-primary-darker: $color-primary-darker;
+
+$text-secondary: $color-secondary;
+$text-secondary-lighter: $color-secondary-lighter;
+$text-secondary-darker: $color-secondary-darker;
+
+$text-light: $color-light;
+
+$text-dark: $color-dark;
+$text-dark-lighter: lighten($color-dark, 10%);
+$text-dark-darker: darken($color-dark, 10%);
+
+// Breakpoint Sizes
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+
+// Z-Index Scales
+$z-index: (0: 0,
+1: 100,
+2: 200,
+3: 300,
+4: 400,
+5: 500,
+6: 600,
+7: 700,
+8: 800,
+9: 900,
+10: 1000,
+15: 1500,
+20: 2000,
+);

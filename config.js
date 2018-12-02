@@ -15,7 +15,7 @@ module.exports = {
      */
 
     // Proper name of the project.
-    projectName: 'Sell Ninja (2018)',
+    projectName: 'Sell Ninha (2018)',
 
     // Project License URI
     projectLicenseURI: 'https://github.com/jdaio/sellninja-2018/blob/master/LICENSE',
@@ -142,5 +142,11 @@ module.exports = {
 
     // SVG Processing Options
     // https://github.com/svg/svgo
-    // Coming Soon
+    imgSvgOpts: {
+        plugins: [
+            {
+                removeViewBox: false,
+            },
+        ],
+    },
 };

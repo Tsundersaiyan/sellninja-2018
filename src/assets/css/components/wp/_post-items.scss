@@ -1,0 +1,75 @@
+/*------------------------------------*\
+    #WP-POST-ITEMS
+\*------------------------------------*/
+
+/*-- Basic Post Item Box --*/
+
+.post-item {
+    flex-basis: 100%;
+    flex-grow: 0;
+    position: relative;
+    @include transition(opacity);
+
+    @include bp-md {
+        flex-basis: 47.5%;
+    }
+
+    &:hover,
+    &:focus {
+        opacity: .9;
+
+        .post-item__title {
+            color: $text-primary-lighter;
+        }
+    }
+}
+
+.post-item__image {
+    height: 12rem;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    @include bp-sm {
+        height: 14rem;
+        margin-bottom: 1.5rem;
+    }
+
+    @include bp-md {
+        height: 16rem;
+    }
+}
+
+.post-item__title {
+    font-family: $font-family-heading;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    @include transition(color);
+
+    @include bp-sm {
+        font-size: 1.5rem;
+    }
+}
+
+.post-item__meta {
+    color: $color-gray;
+    font-size: .8rem;
+    margin-top: 1rem;
+    position: relative;
+    @include z-index(5);
+
+    @include bp-sm {
+        font-size: .9rem;
+    }
+}
+
+.post-item__meta__categories {
+    a {
+        color: $color-gray;
+        font-weight: normal;
+
+        &:hover,
+        &:focus {
+            color: $text-primary-lighter;
+        }
+    }
+}

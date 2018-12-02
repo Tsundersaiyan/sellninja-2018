@@ -1,160 +1,176 @@
-/*
- * Base Stylesheet
- */
-
 /*------------------------------------*\
-    #VARIABLES
+    #BASE
 \*------------------------------------*/
-
-/*-- Variables > Colors --*/
-
-// Primary Color
-$color-primary: #000000;
-$color-primary-lighter: lighten($color-primary, 10%);
-$color-primary-darker: darken($color-primary, 10%);
-
-// Secondary Color
-$color-secondary: #2E9DFF;
-$color-secondary-lighter: lighten($color-secondary, 10%);
-$color-secondary-darker: darken($color-secondary, 10%);
-
-// Light & Dark Colors
-$color-light: #FDFDFD;
-$color-dark: $color-secondary;
-
-// Misc. Colors (Grays, etc.)
-$color-gray: lighten($color-secondary, 10%);
-$color-gray-lighter: lighten($color-gray, 10%);
-$color-gray-darker: darken($color-gray, 10%);
-
-// Text Colors
-$color-text-primary: $color-primary;
-$color-text-primary-lighter: lighten($color-text-primary, 10%);
-$color-text-primary-darker: darken($color-text-primary, 10%);
-
-$color-text-secondary: $color-secondary;
-$color-text-secondary-lighter: lighten($color-text-secondary, 10%);
-$color-text-secondary-darker: darken($color-text-secondary, 10%);
-
-$color-text-accent-yellow: $color-accent-yellow;
-
-$color-text-dark: $color-dark;
-$color-text-dark-lighter: lighten($color-text-dark, 10%);
-$color-text-dark-darker: darken($color-text-dark, 10%);
-
-$color-text-light: $color-light;
-
-/*-- Variables > Font Families --*/
-
-// Base Font Setup For Sans-Serif Fallbacks
-$font-family-sans-serif: -apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-Roboto,
-"Helvetica Neue",
-Arial,
-sans-serif;
-
-// Font Family Base
-$font-family-base: $font-family-sans-serif;
-
-// Font Family, Body
-$font-family-body: 'Open Sans',
-$font-family-base;
-
-// Font Family, Headings
-$font-family-heading: 'Galano Grotesque',
-'Roboto Slab',
-$font-family-body;
-
-$font-family-heading-alt: 'Roboto Slab',
-$font-family-body;
-
-/*-- Variables > Breakpoint Sizes --*/
-
-$bp-sm: 576px;
-$bp-md: 768px;
-$bp-lg: 992px;
-$bp-xl: 1200px;
-
-/*------------------------------------*\
-    #MIXINS
-\*------------------------------------*/
-
-/*-- Mixins > Breakpoints --*/
-
-@mixin bp-sm {
-    @media only screen and (min-width: $bp-sm) {
-        @content;
-    }
-}
-
-@mixin bp-md {
-    @media only screen and (min-width: $bp-md) {
-        @content;
-    }
-}
-
-@mixin bp-lg {
-    @media only screen and (min-width: $bp-lg) {
-        @content;
-    }
-}
-
-@mixin bp-xl {
-    @media only screen and (min-width: $bp-xl) {
-        @content;
-    }
-}
-
-/*-- Mixins > Transitions --*/
-
-@mixin transition($props: all, $duration: .2s, $method: ease-in-out) {
-    $prefixes: -webkit- -moz- -ms- -o-;
-
-    @each $prefix in $prefixes {
-        $value: ();
-
-        @each $prop in $props {
-            @if length($value)>0 {
-                $value: append($value, unquote(",") #{$prop} $duration $method);
-            }
-
-            @else {
-                $value: append($value, #{$prop} $duration $method);
-            }
-        }
-
-        #{$prefix}transition: $value;
-    }
-}
-
-/*------------------------------------*\
-    #BASE-STYLES
-\*------------------------------------*/
-
-/*-- Base Styles > Base --*/
 
 body {
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
     background-color: $color-light;
-    color: $color-text-dark;
+    color: $text-dark;
+    font-family: $font-family-body;
+    font-weight: normal;
+    line-height: 1.618;
     min-height: 100%;
 }
+
+
+/*------------------------------------*\
+    #TYPOGRAPHY
+\*------------------------------------*/
+
+/*-- Headings --*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: $font-family-heading;
+    font-weight: 700;
+}
+
+/*-- Text Modifiers --*/
+
+// Sizing
+.lead {
+    font-size: 1.45rem;
+}
+
+.text-small {
+    font-size: 85%;
+}
+
+// Fonts
+.text-font-body {
+    font-family: $font-family-body;
+}
+
+.text-font-heading {
+    font-family: $font-family-heading;
+}
+
+.text-font-heading-alt {
+    font-family: $font-family-heading;
+}
+
+// Coloring
+.text-color-primary {
+    color: $text-primary;
+}
+
+.text-color-secondary {
+    color: $text-secondary;
+}
+
+.text-color-accent-yellow {
+    color: $color-accent-green;
+}
+
+.text-color-light {
+    color: $text-light;
+}
+
+.text-color-dark {
+    color: $text-dark;
+}
+
 
 /*------------------------------------*\
     #LINKS
 \*------------------------------------*/
 
 a {
-    color: $color-text-primary;
+    border-bottom: .0625rem solid rgba($color-dark, .25);
+    color: $text-dark;
+    font-weight: bold;
+    padding-bottom: .125rem;
     text-decoration: none;
-    @include transition(color);
+    @include transition(border-bottom color);
 
     &:hover,
     &:focus {
-        color: $color-text-primary-lighter;
+        border-bottom-color: currentColor;
+        color: $text-primary-lighter;
         text-decoration: none;
     }
+}
+
+
+/*------------------------------------*\
+    #UTILITIES
+\*------------------------------------*/
+
+/*-- Responsive Videos (iframe) --*/
+
+.util__video-responsive {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+
+    iframe {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+/*-- Covers --*/
+
+// Image Covers
+.util__image-cover,
+.util__image-contain {
+    position: relative;
+
+    &>img,
+    &>svg {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.util__image-cover {
+
+    &>img,
+    &>svg {
+        object-fit: cover;
+    }
+}
+
+.util__image-contain {
+
+    &>img,
+    &>svg {
+        object-fit: contain;
+    }
+}
+
+// Link Covers
+.util__link-cover {
+    border: none;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: 100vw;
+    transition: none;
+    white-space: nowrap;
+    @include z-index(3);
 }

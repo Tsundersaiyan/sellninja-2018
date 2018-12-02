@@ -1,8 +1,11 @@
 // Import Bootstrap
-@import 'bootstrap';
+@import 'controls/bootstrap';
 
 // Import Components
-@import 'components';
+@import 'controls/components';
+
+// Import Vendors
+@import 'controls/vendors';
 
 // Import Modules
-@import 'modules';
+// @import 'controls/modules';

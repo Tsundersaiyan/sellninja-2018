@@ -1,0 +1,51 @@
+/*------------------------------------*\
+    #INPUTS
+\*------------------------------------*/
+
+.form {
+    padding: 1rem 0;
+}
+
+.form--light {
+    .form-label {
+        color: $text-light;
+    }
+
+    .form-control {
+        background-color: transparent;
+        border-color: $color-light;
+        color: $text-light;
+
+        &:focus {
+            background-color: transparent;
+            border-color: $color-light;
+            color: $text-light;
+        }
+    }
+}
+
+.form-label {
+    cursor: pointer;
+    font-size: .9rem;
+    margin-bottom: .25rem;
+}
+
+.form-control {
+    background-color: $color-light;
+    border: .125rem solid $color-dark;
+    border-radius: 0;
+    color: $text-dark-lighter;
+
+    &:focus {
+        background-color: $color-light;
+        border-color: $color-primary-lighter;
+        box-shadow: none;
+        color: $text-dark;
+        @include transition(all);
+    }
+}
+
+.form-submit {
+    padding: 1rem 0;
+    text-align: center;
+}

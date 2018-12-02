@@ -229,16 +229,16 @@ gulp.task('render:css', () => {
                 .sass.logError))
         .pipe(plugins()
             .filter('**/*.css'))
-        .pipe(plugins()
-            .sourcemaps.init())
+        /* .pipe(plugins()
+            .sourcemaps.init()) */
         .pipe(plugins()
             .postcss(cssPlugins))
         .pipe(plugins()
             .rename({
                 suffix: '.min',
             }))
-        .pipe(plugins()
-            .sourcemaps.write())
+        /* .pipe(plugins()
+            .sourcemaps.write()) */
         .pipe(gulp.dest(`${dirs.build}/assets/css`))
         .pipe(plugins()
             .filter('**/*.css'))
@@ -265,11 +265,11 @@ gulp.task('render:js', () => {
         .pipe(source(jsSrc))
         .pipe(buffer())
         .pipe(plugins().rename(`${jsOutput}.min.js`))
-        .pipe(plugins().sourcemaps.init({
+        /* .pipe(plugins().sourcemaps.init({
             loadMaps: true,
-        }))
+        })) */
         .pipe(plugins().uglify())
-        .pipe(plugins().sourcemaps.write())
+        // .pipe(plugins().sourcemaps.write())
         .pipe(gulp.dest(jsDestBuild))
         .pipe(browserSync.stream());
 
@@ -310,6 +310,7 @@ gulp.task('render:views', () => {
 
     stream = stream.pipe(plugins()
         .newer(dirs.build))
+        .pipe(plugins().stripComments())
         .pipe(gulp.dest(dirs.build))
         .pipe(browserSync.stream());
 
@@ -382,7 +383,7 @@ gulp.task('render:img', () => {
                 colorTypeReduction: imgPngColorTypeReduction,
                 paletteReduction: imgPngPaletteReduction,
             }),
-            plugins().imagemin.svgo(),
+            plugins().imagemin.svgo(config.imgSvgOpts),
         ]))
         .pipe(gulp.dest(`${dirs.build}/assets/img`))
         .pipe(browserSync.stream());
