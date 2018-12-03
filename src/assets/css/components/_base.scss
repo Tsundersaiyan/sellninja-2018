@@ -56,10 +56,6 @@ h6,
     font-family: $font-family-heading;
 }
 
-.text-font-heading-alt {
-    font-family: $font-family-heading;
-}
-
 // Coloring
 .text-color-primary {
     color: $text-primary;
@@ -69,7 +65,7 @@ h6,
     color: $text-secondary;
 }
 
-.text-color-accent-yellow {
+.text-color-accent-green {
     color: $color-accent-green;
 }
 
@@ -88,8 +84,7 @@ h6,
 
 a {
     border-bottom: .0625rem solid rgba($color-dark, .25);
-    color: $text-dark;
-    font-weight: bold;
+    color: $text-primary;
     padding-bottom: .125rem;
     text-decoration: none;
     @include transition(border-bottom color);
@@ -106,6 +101,12 @@ a {
 /*------------------------------------*\
     #UTILITIES
 \*------------------------------------*/
+
+/*-- FontAwesome Alignment --*/
+
+.util__fa {
+    vertical-align: middle;
+}
 
 /*-- Responsive Videos (iframe) --*/
 

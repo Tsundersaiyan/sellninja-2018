@@ -115,7 +115,7 @@ module.exports = {
      */
 
     viewEnvironmentVariables: {
-        FONT_GOOGLE: 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Roboto+Slab:300,400,700',
+        FONT_GOOGLE: 'https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|Titillium+Web:700',
     },
 
     /**
