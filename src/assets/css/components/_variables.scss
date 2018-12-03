@@ -11,7 +11,7 @@ $color-secondary: #1A1A1A;
 $color-accent-green: #0FAC94;
 
 $color-light: #FDFDFD;
-$color-dark: #242424;
+$color-dark: #525252;
 $color-gray: #F0F0F0;
 
 // Fonts
@@ -38,8 +38,8 @@ $color-primary-darker: darken($color-primary, 10%);
 $color-secondary-lighter: lighten($color-secondary, 10%);
 $color-secondary-darker: darken($color-secondary, 10%);
 
-$color-gray-lighter: lighten($color-gray, 10%);
-$color-gray-darker: darken($color-gray, 10%);
+$color-gray-lighter: lighten($color-gray, 5%);
+$color-gray-darker: darken($color-gray, 5%);
 
 // Text Colors
 $text-primary: $color-primary;

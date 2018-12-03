@@ -8,14 +8,18 @@
 @import '../components/base';
 
 // Import Standard Components
-/* @import '../components/buttons';
-@import '../components/footer'; */
+@import '../components/buttons';
 @import '../components/header';
-@import '../components/nav';
-/*@import '../components/inputs';
 @import '../components/layout';
+@import '../components/nav';
 
 // Import Reusable Component Widgets
+@import '../components/widgets/hero';
+
+/*
+@import '../components/footer'; */
+/*@import '../components/inputs';
+
 
 
 // Import WordPress Components

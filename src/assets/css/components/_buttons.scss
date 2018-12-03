@@ -4,9 +4,11 @@
 
 .btn {
     border: .0625rem solid transparent;
-    border-radius: 0;
-    line-height: 1.618;
-    padding: .5rem 4.5rem;
+    border-radius: .35rem;
+    font-family: $font-family-heading;
+    font-weight: bold;
+    padding: .75rem 4.5rem;
+    text-transform: uppercase;
     white-space: pre-wrap;
     @include transition(all);
 
@@ -16,30 +18,28 @@
     }
 }
 
-/*-- Sizes --*/
-
-.btn--sm {
-    font-size: .85rem;
-    padding: .35rem 2.25rem;
-}
-
-.btn--lg {
-    font-size: 1.25rem;
-    padding: .75rem 4.75rem;
-}
-
 /*-- Styles --*/
+
+.btn--primary,
+.btn--secondary,
+.btn--dark {
+    color: $text-light;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $text-light;
+    }
+}
 
 .btn--primary {
     background: $color-primary;
     border-color: $color-primary;
-    color: $text-light;
 
     &:hover,
     &:focus {
         background: $color-primary-lighter;
         border-color: $color-primary-lighter;
-        color: $text-light;
     }
 
     &:active {
@@ -49,52 +49,42 @@
 }
 
 .btn--secondary {
-    background: $color-secondary;
-    border-color: $color-secondary;
-    color: $text-light;
+    background: $color-accent-green;
+    border-color: $color-accent-green;
 
     &:hover,
     &:focus {
-        background: $color-secondary-lighter;
-        border-color: $color-secondary-lighter;
-        color: $text-light;
+        background: lighten($color-accent-green, 5%);
+        border-color: lighten($color-accent-green, 5%);
     }
 
     &:active {
-        background: $color-secondary-darker;
-        border-color: $color-secondary-darker;
+        background: darken($color-accent-green, 5%);
+        border-color: darken($color-accent-green, 5%);
     }
 }
 
 .btn--light {
     background: $color-light;
     border-color: $color-light;
-    color: $text-dark;
+    color: $text-primary;
 
     &:hover,
-    &:focus {
-        background: darken($color-light, 5%);
-        border-color: darken($color-light, 5%);
-        color: $text-dark;
-        outline: 0;
-    }
-
+    &:focus,
     &:active {
-        background: darken($color-light, 10%);
-        border-color: darken($color-light, 10%);
+        color: $text-primary-lighter;
+        box-shadow: .0625rem .0625rem .1875rem rgba($color-dark, .25);
     }
 }
 
 .btn--dark {
     background: $color-dark;
     border-color: $color-dark;
-    color: $text-light;
 
     &:hover,
     &:focus {
         background: lighten($color-dark, 10%);
         border-color: lighten($color-dark, 10%);
-        color: $text-light;
     }
 
     &:active {
@@ -103,8 +93,14 @@
     }
 }
 
-.btn--outline-primary {
+.btn--outline-primary,
+.btn--outline-secondary,
+.btn--outline-dark,
+.btn--outline-light {
     background: transparent;
+}
+
+.btn--outline-primary {
     border-color: $color-primary;
     color: $text-primary;
 
@@ -118,29 +114,29 @@
     &:active {
         background: $color-primary-darker;
         border-color: $color-primary-darker;
+        color: $text-light;
     }
 }
 
 .btn--outline-secondary {
-    background: transparent;
-    border-color: $color-secondary;
-    color: $text-secondary;
+    border-color: $color-accent-green;
+    color: $color-accent-green;
 
     &:hover,
     &:focus {
-        background: $color-secondary-lighter;
-        border-color: $color-secondary-lighter;
+        background: lighten($color-accent-green, 5%);
+        border-color: lighten($color-accent-green, 5%);
         color: $text-light;
     }
 
     &:active {
-        background: $color-secondary-darker;
-        border-color: $color-secondary-darker;
+        background: darken($color-accent-green, 5%);
+        border-color: darken($color-accent-green, 5%);
+        color: $text-light;
     }
 }
 
 .btn--outline-light {
-    background: rgba($color-light, .075);
     border-color: $color-light;
     color: $text-light;
 
@@ -148,17 +144,18 @@
     &:focus {
         background: $color-light;
         border-color: $color-light;
-        color: $text-primary;
+        color: $text-primary-lighter;
+        box-shadow: .0625rem .0625rem .1875rem rgba($color-dark, .25);
     }
 
     &:active {
-        background: darken($color-light, 10%);
-        border-color: darken($color-light, 10%);
+        background: $color-light;
+        border-color: $color-light;
+        color: $text-primary-lighter;
     }
 }
 
 .btn--outline-dark {
-    background: transparent;
     border-color: $color-dark;
     color: $text-dark;
 
@@ -167,11 +164,11 @@
         background: lighten($color-dark, 10%);
         border-color: lighten($color-dark, 10%);
         color: $text-light;
-        outline: 0;
     }
 
     &:active {
         background: darken($color-dark, 10%);
         border-color: darken($color-dark, 10%);
+        color: $text-light;
     }
 }
