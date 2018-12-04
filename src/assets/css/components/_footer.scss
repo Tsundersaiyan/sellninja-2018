@@ -4,208 +4,71 @@
 
 /*-- Structure --*/
 
-.footer {
-    color: $text-light;
-    margin-top: 0;
-    position: relative;
-    @include z-index(2);
+$text-footer: lighten($color-dark, 40%);
 
-    @include bp-md {
-        margin-top: 2.5rem;
+.footer {
+    background: $color-secondary-lighter;
+    color: $text-footer;
+    padding: 1rem 0;
+}
+
+.footer__lower {
+    border-top: .0625rem solid rgba($color-gray, .15);
+    font-size: .9rem;
+    padding: 2.5rem 0 1.25rem;
+}
+
+/*-- Content --*/
+
+.footer__lower__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 2rem;
+
+    @include bp-sm {
+        width: 80%;
+        margin: 0 auto 3rem;
+    }
+
+    li {
+        margin: 0 0 .5rem .5rem;
+        padding-left: .5rem;
+        position: relative;
+
+        &::after {
+            color: $text-footer;
+            content: '|';
+            position: absolute;
+            top: 50%;
+            left: -.05rem;
+            transform: translateY(-50%);
+        }
+
+        &:first-child {
+            margin-left: 0;
+            padding-left: 0;
+
+            &::after {
+                display: none;
+            }
+        }
     }
 
     a {
-        color: $text-light;
+        color: $text-footer;
+        padding: 0;
 
         &:hover,
         &:focus {
-            color: lighten($color-accent-green, 10%);
+            color: lighten($text-footer, 10%);
         }
     }
 }
 
-.footer__main {
-    background: $color-secondary;
-    padding: 2.5rem 0;
-
-    @include bp-lg {
-        padding: 3rem 0;
-    }
-}
-
-.footer__main__inner {
-    &__row {
-        display: flex;
-        flex-wrap: wrap;
-
-        @include bp-md {
-            align-items: flex-start;
-            justify-content: space-between;
-            margin-bottom: 2.5rem;
-        }
-
-        &:last-child {
-            .footer__main__section {
-                &:last-of-type {
-                    margin-bottom: 0;
-                }
-            }
-        }
-
-        &:last-of-type {
-            @include bp-md {
-                margin-bottom: 0;
-            }
-        }
-
-        &--center {
-            @include bp-md {
-                align-items: center;
-            }
-        }
-    }
-}
-
-.footer__main__section {
-    margin-bottom: 2rem;
-    text-align: center;
-    width: 100%;
-
-    @include bp-md {
-        flex-basis: 30%;
-        flex-grow: 0;
-        margin-bottom: .5rem;
-        text-align: left;
-        width: auto;
-    }
-
-    a {
-        font-weight: normal;
-    }
-
-    p {
-        &:last-of-type {
-            margin-bottom: 0;
-        }
-    }
-
-    &--hidden {
-        display: none;
-
-        @include bp-lg {
-            display: block;
-        }
-    }
-}
-
-.footer__bottom {
-    background: darken($color-secondary-darker, 10%);
-    font-size: .9rem;
-    padding: 1.5rem 0;
-}
-
-.footer__bottom__inner {
-    align-items: center;
-    display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-
-    @include bp-lg {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-    }
-}
-
-/*-- Footer Elements --*/
-
-// Copyright Line
 .footer__copyright {
-    p {
-        margin-bottom: 0;
-    }
-}
-
-// Footer Primary Navigation
-.footer__nav--primary {
-    align-items: flex-start;
-
-    .nav__list {
-        display: block;
-        margin: 0 auto .75rem;
-        width: 100%;
-
-        @include bp-md {
-            flex: 1;
-            margin: .75rem 1rem 0 0;
-            width: auto;
-        }
-
-        &:first-of-type {
-            margin-top: .75rem;
-        }
-
-        &:last-child {
-            @include bp-md {
-                margin-right: 0;
-            }
-        }
-    }
-
-    .nav__item {
-        margin: 0 0 .75rem;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-}
-
-// Footer Social Links
-.footer__nav--social {
-    .nav__item {
-        a {
-            color: $color-accent-green;
-
-            &:hover,
-            &:focus {
-                color: lighten($color-accent-green, 10%);
-            }
-        }
-    }
-}
-
-// Footer Secondary Navigation
-.footer__nav--secondary {
-    justify-content: center;
-    margin-bottom: 1rem;
-    width: 100%;
-
-    @include bp-lg {
-        margin-bottom: 0;
-        width: auto;
-    }
-
-    .nav__list {
-        flex: 1;
-        justify-content: center;
-    }
-
-    .nav__item {
-        margin-right: 2rem;
-
-        @include bp-lg {
-            margin-right: 1rem;
-        }
-
-        &:last-child {
-            margin-right: 0;
-
-            @include bp-lg {
-                margin-right: 0;
-            }
-        }
-    }
+    margin-bottom: 0;
+    text-align: center;
 }

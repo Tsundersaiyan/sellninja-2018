@@ -37,6 +37,25 @@ h6,
     font-weight: 700;
 }
 
+/*-- Lists --*/
+
+ol {
+    list-style: none;
+    counter-reset: theme-custom-counter;
+
+    li {
+        counter-increment: theme-custom-counter;
+        text-indent: -1.05rem;
+
+        &::before {
+            content: counter(theme-custom-counter) ". ";
+            color: $text-primary;
+            font-family: $font-family-heading;
+            font-weight: bold;
+        }
+    }
+}
+
 /*-- Text Modifiers --*/
 
 // Sizing

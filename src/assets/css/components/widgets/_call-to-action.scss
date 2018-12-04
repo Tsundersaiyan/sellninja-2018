@@ -1,0 +1,84 @@
+/*------------------------------------*\
+    #COMPONENT-CALL-TO-ACTION
+\*------------------------------------*/
+
+.component-call-to-action {}
+
+.component-call-to-action__inner {
+    background: $color-primary;
+    background: linear-gradient(25deg, #6F12BE 0%, #5241D0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6F12BE', endColorstr='#5241D0', GradientType=1);
+    border-radius: .5rem;
+    padding: 2rem;
+
+    @include bp-md {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 3rem;
+    }
+}
+
+.component-call-to-action__info {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    @include bp-md {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        margin-right: 2rem;
+        margin-bottom: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.component-call-to-action__info__title {
+    color: $text-light;
+    font-family: $font-family-heading;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: .25rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.component-call-to-action__info__description {
+    color: rgba($text-light, .75);
+    margin-bottom: 0;
+}
+
+.component-call-to-action__actions {
+    @include bp-sm {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    @include bp-md {
+        text-align: left;
+        justify-content: flex-end;
+    }
+}
+
+.component-call-to-action__actions__item {
+    margin-bottom: .5rem;
+    width: 100%;
+
+    @include bp-sm {
+        margin-right: 1rem;
+        margin-bottom: 0;
+        width: auto;
+    }
+
+    &:last-child {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}

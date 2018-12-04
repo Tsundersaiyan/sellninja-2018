@@ -1,0 +1,84 @@
+/*------------------------------------*\
+    #COMPONENT-CONTENT-BOXES
+\*------------------------------------*/
+
+.component-content-boxes {}
+
+.component-content-boxes__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    @include bp-md {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.component-content-boxes__item {
+    border-top: .0625rem solid darken($color-gray-darker, 5%);
+    border-left: .0625rem solid darken($color-gray-darker, 5%);
+    border-right: .0625rem solid darken($color-gray-darker, 5%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center;
+
+    @include bp-md {
+        border-left: none;
+        border-bottom: .0625rem solid darken($color-gray-darker, 5%);
+        flex: 1;
+        padding: 3rem 2rem;
+    }
+
+    &:first-child {
+        border-radius: .25rem .25rem 0 0;
+
+        @include bp-md {
+            border-left: .0625rem solid darken($color-gray-darker, 5%);
+            border-radius: .25rem 0 0 .25rem;
+        }
+    }
+
+    &:last-child {
+        border-bottom: .0625rem solid darken($color-gray-darker, 5%);
+        border-radius: 0 0 .25rem .25rem;
+
+        @include bp-md {
+            border-radius: 0 .25rem .25rem 0;
+        }
+    }
+
+    &:only-child {
+        border: .0625rem solid darken($color-gray-darker, 5%);
+        border-radius: .25rem;
+    }
+}
+
+.component-content-boxes__item__icon {
+    margin: 0 auto 2rem;
+    height: 4rem;
+    width: 4rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.component-content-boxes__item__title {
+    color: $text-secondary;
+    font-family: $font-family-heading;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.component-content-boxes__item__text {
+    margin-bottom: 0;
+}

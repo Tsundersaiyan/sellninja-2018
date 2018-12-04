@@ -10,11 +10,15 @@
 // Import Standard Components
 @import '../components/buttons';
 @import '../components/header';
+@import '../components/footer';
 @import '../components/layout';
 @import '../components/nav';
 
 // Import Reusable Component Widgets
+@import '../components/widgets/call-to-action';
+@import '../components/widgets/content-boxes';
 @import '../components/widgets/hero';
+@import '../components/widgets/split-content';
 
 /*
 @import '../components/footer'; */
