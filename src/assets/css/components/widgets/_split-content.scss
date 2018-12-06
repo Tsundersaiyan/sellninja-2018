@@ -3,3 +3,54 @@
 \*------------------------------------*/
 
 .component-split-content {}
+
+.component-split-content__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.component-split-content__left,
+.component-split-content__right {
+    margin-bottom: 2rem;
+    width: 100%;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include bp-md {
+        display: flex;
+        flex: 1;
+        width: 48%;
+        margin-right: 2%;
+        margin-bottom: 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.component-split-content__content {
+    flex: 1;
+}
+
+.component-split-content__content--text {
+    p {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.component-split-content__content--image {
+    text-align: center;
+
+    img,
+    svg {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+}

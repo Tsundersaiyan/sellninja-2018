@@ -1,0 +1,84 @@
+/*------------------------------------*\
+    #COMPONENT-CONTENT
+\*------------------------------------*/
+
+.component-content {
+    margin: 0 auto;
+
+    @include bp-sm {
+        width: 80%;
+    }
+
+    @include bp-md {
+        width: 75%;
+    }
+
+    @include bp-lg {
+        width: 70%;
+    }
+
+    @include bp-xl {
+        width: 60%;
+    }
+
+    p,
+    ul,
+    ol {
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    img,
+    svg {
+        max-width: 100%;
+    }
+}
+
+.component-content--wide {
+
+    @include bp-sm {
+        width: 90%;
+    }
+
+    @include bp-md {
+        width: 85%;
+    }
+
+    @include bp-lg {
+        width: 75%;
+    }
+
+    @include bp-xl {
+        width: 70%;
+    }
+}
+
+.component-content--bordered {
+    .component-content__content {
+        border: .0625rem solid darken($color-gray-darker, 5%);
+        border-radius: .5rem;
+        padding: 1.5rem 1rem;
+
+        @include bp-sm {
+            padding: 2rem 1.5rem;
+        }
+
+        @include bp-md {
+            padding: 2.5rem 2rem;
+        }
+
+        @include bp-lg {
+            padding: 3rem 2.5rem;
+        }
+    }
+}
+
+.component-content__content {
+
+    img,
+    svg {
+        max-width: 100%;
+        height: auto;
+    }
+}

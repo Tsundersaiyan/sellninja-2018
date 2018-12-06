@@ -39,19 +39,34 @@ h6,
 
 /*-- Lists --*/
 
+ol,
+ul {
+    li {
+        margin-bottom: .5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
 ol {
-    list-style: none;
     counter-reset: theme-custom-counter;
+    list-style: none;
+    padding: 0;
 
     li {
+        display: flex;
         counter-increment: theme-custom-counter;
-        text-indent: -1.05rem;
 
         &::before {
             content: counter(theme-custom-counter) ". ";
             color: $text-primary;
+            display: inline-block;
             font-family: $font-family-heading;
             font-weight: bold;
+            line-height: 1.618;
+            margin: -.04rem .5rem 0 0;
         }
     }
 }

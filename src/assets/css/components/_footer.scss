@@ -12,6 +12,10 @@ $text-footer: lighten($color-dark, 40%);
     padding: 1rem 0;
 }
 
+.footer__upper {
+    padding: 2.5rem 0;
+}
+
 .footer__lower {
     border-top: .0625rem solid rgba($color-gray, .15);
     font-size: .9rem;
@@ -29,8 +33,20 @@ $text-footer: lighten($color-dark, 40%);
     margin: 0 auto 2rem;
 
     @include bp-sm {
-        width: 80%;
         margin: 0 auto 3rem;
+        width: 95%;
+    }
+
+    @include bp-md {
+        width: 90%;
+    }
+
+    @include bp-lg {
+        width: 85%;
+    }
+
+    @include bp-xl {
+        width: 80%;
     }
 
     li {

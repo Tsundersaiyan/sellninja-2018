@@ -1,0 +1,71 @@
+/*
+ * Stat Box Component
+ */
+
+/*------------------------------------*\
+    #STAT-BOX
+\*------------------------------------*/
+
+.component-stat-boxes {
+    border-top: .0625rem solid darken($color-gray-darker, 5%);
+    border-bottom: .0625rem solid darken($color-gray-darker, 5%);
+    padding: 1.5rem 0;
+
+    @include bp-lg {
+        padding: 2rem 0;
+    }
+}
+
+.component-stat-boxes__inner {
+    @include bp-md {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.component-stat-boxes__stat {
+    margin-bottom: 2rem;
+    padding: .5rem;
+    text-align: center;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include bp-md {
+        width: 33.3%;
+        margin: 0;
+        padding: 1rem;
+    }
+}
+
+.component-stat-boxes__stat__main {
+    color: $color-accent-green;
+    display: block;
+    font-family: $font-family-heading;
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+
+    @include bp-sm {
+        font-size: 3rem;
+    }
+
+    @include bp-md {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    @include bp-lg {
+        font-size: 5rem;
+    }
+}
+
+.component-stat-boxes__stat__desc {
+    opacity: .75;
+    margin-bottom: 0;
+
+    @include bp-md {
+        font-size: 1.1rem;
+    }
+}
