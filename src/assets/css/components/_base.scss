@@ -39,17 +39,6 @@ h6,
 
 /*-- Lists --*/
 
-ol,
-ul {
-    li {
-        margin-bottom: .5rem;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-}
-
 ol {
     counter-reset: theme-custom-counter;
     list-style: none;
@@ -58,6 +47,11 @@ ol {
     li {
         display: flex;
         counter-increment: theme-custom-counter;
+        margin-bottom: .5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
 
         &::before {
             content: counter(theme-custom-counter) ". ";

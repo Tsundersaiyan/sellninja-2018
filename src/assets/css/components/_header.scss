@@ -17,11 +17,7 @@
 .header__inner {
     align-items: center;
     display: flex;
-    justify-content: center;
-
-    @include bp-md {
-        justify-content: space-between;
-    }
+    justify-content: space-between;
 }
 
 /*-- Header > Branding --*/

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+
+        <title>About &mdash; Sell Ninja</title>
+        <meta name="description" content="">
+        <meta name="robots" content="index,follow">
+
+        <link rel="stylesheet" href="assets/css/main.min.css">
+
+        <meta name="format-detection" content="telephone=no">
+        <meta name="theme-color" content="#6248AA">
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="header__inner">
+                            <div class="header__brand">
+                                <a href="#" title="Sell Ninja" class="util__link-cover">Sell Ninja</a>
+                                <img src="assets/img/logo.svg" title="Sell Ninja" alt="Sell Ninja Logo" />
+                            </div>
+                            <nav class="nav nav--primary">
+                                <ul class="nav__list">
+                                    <li class="nav__item">
+                                        <a href="#" title="Home" class="nav__link">Home</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" title="Cell Phones" class="nav__link">Cell Phones</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" title="Used" class="nav__link">Used</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" title="About" class="nav__link">About</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" title="Contact" class="nav__link">Contact</a>
+                                    </li>
+                                    <li class="nav__item nav__item--em">
+                                        <a href="#" title="Call Us" class="nav__link"><span class="util__fa"><i class="fas fa-mobile-alt"></i></span> (555) 555&mdash;5555</a>
+                                    </li>
+                                    <li class="nav__item nav__item--em">
+                                        <a href="#" title="Email Us" class="nav__link"><span class="util__fa"><i class="far fa-envelope"></i></span> hello@sellninja.com</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="section">
+                <div class="section__header">
+                    <h2 class="section__title">About Us</h2>
+                </div>
+                <div class="component-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="component-content__content">
+                                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="component-stat-boxes">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="component-stat-boxes__inner">
+                                    <div class="component-stat-boxes__stat">
+                                        <span class="component-stat-boxes__stat__main">100+</span>
+                                        <p class="component-stat-boxes__stat__desc">Active Products We're Collecting</p>
+                                    </div>
+                                    <div class="component-stat-boxes__stat">
+                                        <span class="component-stat-boxes__stat__main">7k+</span>
+                                        <p class="component-stat-boxes__stat__desc">Active Enquiries</p>
+                                    </div>
+                                    <div class="component-stat-boxes__stat">
+                                        <span class="component-stat-boxes__stat__main">10k+</span>
+                                        <p class="component-stat-boxes__stat__desc">Satisfied Customers</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="section__header">
+                    <h2 class="section__title">Where are we located?</h2>
+                </div>
+                <div class="component-map" data-marker="assets/img/icons/icon-marker.svg">
+                    <div class="component-map__container" id="map"></div>
+                    <script>
+                    function initMap() {
+                        var location = {
+                            lat: 40.703450,
+                            lng: -73.307470
+                        };
+
+                        var mapComponent = document.querySelector('.component-map');
+
+                        var markerIcon = {
+                            anchor: new google.maps.Point(14, 14),
+                            scaledSize: new google.maps.Size(28, 28),
+                            url: '/' + mapComponent.dataset.marker,
+                        };
+
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            center: location,
+                            disableDefaultUI: true,
+                            mapTypeId: 'roadmap',
+                            zoom: 15,
+                        });
+
+                        var marker = new google.maps.Marker({
+                            icon: markerIcon,
+                            map: map,
+                            position: location,
+                        });
+                    }
+
+                    </script>
+                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtq26_4kzqBBTdIg1Q4Rl_luhEfTwJaoM&callback=initMap" type="text/javascript"></script>
+                </div>
+            </section>
+            <section class="section">
+                <div class="section__header">
+                    <h2 class="section__title">Why Choose Us?</h2>
+                </div>
+                <div class="component-content component-content--bordered">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="component-content__content">
+                                    <ul>
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</li>
+                                        <li>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+                                        <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+                                        <li>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntu.</li>
+                                        <li>Adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="section__header">
+                    <h2 class="section__title">What do we accept?</h2>
+                </div>
+                <div class="component-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="component-content__content">
+                                    <p class="text-center">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer__upper">
+                            <div class="row">
+                                <div class="col-7">
+                                    <p>Some stuff.</p>
+                                </div>
+                                <div class="col-3 offset-1">
+                                    <p>Some other stuff.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer__lower">
+                            <ul class="footer__lower__links">
+                                <li>
+                                    <a href="#" title="Alexander City">Alexander City</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Andalusia">Andalusia</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Anniston">Anniston</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Athens">Athens</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Atmore">Atmore</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Auburn">Auburn</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Bessemer">Bessemer</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Birmingham">Birmingham</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Chickasaw">Chickasaw</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Clanton">Clanton</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Cullman">Cullman</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Decatur">Decatur</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Demopolis">Demopolis</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Dothan">Dothan</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Enterprise">Enterprise</a>
+                                </li>
+                            </ul>
+                            <p class="footer__copyright">Copyright &copy; 2018 SellNinja.com. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="assets/js/bundle.min.js"></script>
+    </body>
+
+</html>

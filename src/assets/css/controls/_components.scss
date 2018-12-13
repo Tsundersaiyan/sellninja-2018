@@ -8,9 +8,13 @@
 @import '../components/base';
 
 // Import Standard Components
+@import '../components/accordion';
+@import '../components/breadcrumbs';
 @import '../components/buttons';
+@import '../components/content';
 @import '../components/header';
 @import '../components/footer';
+@import '../components/inputs';
 @import '../components/layout';
 @import '../components/nav';
 
@@ -19,21 +23,6 @@
 @import '../components/widgets/content';
 @import '../components/widgets/content-boxes';
 @import '../components/widgets/hero';
+@import '../components/widgets/map';
 @import '../components/widgets/split-content';
 @import '../components/widgets/stat-boxes';
-
-/*
-@import '../components/footer'; */
-/*@import '../components/inputs';
-
-
-
-// Import WordPress Components
-@import '../components/wp/core';
-@import '../components/wp/pagination';
-@import '../components/wp/post-items';
-@import '../components/wp/post-single';
-@import '../components/wp/posts';
-
-// IE Compatibility
-@import '../components/ie'; */

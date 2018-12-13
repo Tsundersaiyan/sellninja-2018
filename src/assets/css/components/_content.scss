@@ -1,0 +1,32 @@
+/*------------------------------------*\
+    #CONTENT
+\*------------------------------------*/
+
+.content {}
+
+.content--page {}
+
+.content__heading {
+    border-bottom: .0625rem solid darken($color-gray-darker, 5%);
+    margin: 3rem 0 1rem;
+    padding-bottom: 1rem;
+}
+
+.content__title {
+    font-weight: normal;
+    font-size: 1.75rem;
+}
+
+.content__main {
+    border-bottom: .0625rem solid darken($color-gray-darker, 5%);
+    padding: 3rem 0;
+}
+
+.content__subheading {
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+}
+
+.content__description {
+    margin-bottom: 3rem;
+}

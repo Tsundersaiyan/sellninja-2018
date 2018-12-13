@@ -1,0 +1,22 @@
+/*------------------------------------*\
+    #COMPONENT-MAP
+\*------------------------------------*/
+
+.component-map {}
+
+.component-map__container {
+    height: 50vh;
+    width: 100%;
+
+    @include bp-sm {
+        height: 55vh;
+    }
+
+    @include bp-md {
+        height: 60vh;
+    }
+
+    @include bp-lg {
+        height: 65vh;
+    }
+}

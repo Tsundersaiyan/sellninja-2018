@@ -24,6 +24,41 @@ $text-footer: lighten($color-dark, 40%);
 
 /*-- Content --*/
 
+.footer__contact {
+    color: $text-light;
+    list-style: none;
+    text-align: center;
+
+    a {
+        color: $text-light;
+    }
+
+    li {
+        display: inline-block;
+        margin-right: 1.5rem;
+        padding-right: 1.5rem;
+        position: relative;
+
+        &::after {
+            color: $text-footer;
+            content: '|';
+            position: absolute;
+            top: 50%;
+            right: -.1rem;
+            transform: translateY(-50%);
+        }
+
+        &:last-child {
+            margin-right: 0;
+            padding-right: 0;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
 .footer__lower__links {
     display: flex;
     flex-wrap: wrap;
@@ -87,4 +122,29 @@ $text-footer: lighten($color-dark, 40%);
 .footer__copyright {
     margin-bottom: 0;
     text-align: center;
+}
+
+/*-- Mobile Footer --*/
+
+.footer__lower__section {}
+
+.footer__lower__section__title {
+    .accordion__collapse__link {
+        background: $color-secondary-lighter;
+        border: 0;
+        color: $text-light;
+        cursor: pointer;
+        display: block;
+        font-family: $font-family-heading;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        padding: .5rem;
+        text-align: left;
+        width: 100%;
+
+        &:hover,
+        &:focus {
+            background: lighten($color-secondary-lighter, 10%);
+        }
+    }
 }

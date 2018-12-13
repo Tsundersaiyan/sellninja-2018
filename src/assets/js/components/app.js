@@ -18,20 +18,8 @@ window.$ = $;
 
 // Enabling enhanced navigation.
 function initHeaderNav() {
-    const headerNavHeight = $('.nav[data-nav="header"]').outerHeight();
-    const menuClass = 'fs-nav';
-    const navToggleClass = 'nav-toggle';
-    let toTop = $(document).scrollTop();
-
-    function showToggle(t) {
-        if (t > (headerNavHeight)) {
-            $(`.${navToggleClass}`).not(`.${navToggleClass}--close`).addClass(`${navToggleClass}--show`);
-        } else {
-            $(`.${navToggleClass}`).not(`.${navToggleClass}--close`).removeClass(`${navToggleClass}--show`);
-        }
-    }
-
-    showToggle(toTop);
+    const menuClass = 'nav--mobile';
+    const navToggleClass = 'nav-mobile-toggle';
 
     $(`.${navToggleClass}`).on('click', () => {
         if ($(`.${menuClass}`).hasClass(`${menuClass}--open`)) {
@@ -48,10 +36,25 @@ function initHeaderNav() {
             }
         }
     });
+}
 
-    $(document).scroll(() => {
-        toTop = $(document).scrollTop();
-        showToggle(toTop);
+// Modify Bootstrap accordion so ID tags aren't needed.
+function initAccordion() {
+    const accordionClass = 'accordion';
+
+    $(`.${accordionClass}`).each((i, accordionEl) => {
+        const accordionObj = $(accordionEl);
+
+        accordionObj.find(`.${accordionClass}__card`).each((j, accordionCardEl) => {
+            const accordionCard = $(accordionCardEl);
+
+            accordionCard.find(`.${accordionClass}__collapse__link`).click((accordionLinkEl) => {
+                const accordionCollapse = $(accordionLinkEl.currentTarget);
+
+                accordionCollapse.toggleClass(`${accordionClass}__collapse__link--active`);
+                accordionCollapse.closest(`.${accordionClass}__card`).find('.collapse').collapse('toggle');
+            });
+        });
     });
 }
 
@@ -68,5 +71,6 @@ export default function initAppJs() {
     $(document).ready(() => {
         initAOS();
         initHeaderNav();
+        initAccordion();
     });
 }
